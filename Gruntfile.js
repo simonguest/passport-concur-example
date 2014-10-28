@@ -10,6 +10,27 @@ module.exports = function (grunt) {
         }
       }
     },
+    bower: {
+      install: {
+        options: {
+          copy: false,
+          targetDir: './scripts',
+          verbose: true
+        }
+      }
+    },
+    clean: {
+      scripts: [
+        '/scripts'
+      ]
+    },
+    copy: {
+      scripts: {
+        files: [
+          {expand: true, cwd: 'bower_components/bootstrap/dist/', src: '**/*', dest: 'scripts/bootstrap/'}
+        ]
+      }
+    },
     nodemon: {
       dev: {
         script: 'main.js'
@@ -19,5 +40,5 @@ module.exports = function (grunt) {
   /* jshint ignore:end */
 
   // Default task(s).
-  grunt.registerTask('default', ['npm-install', 'notify:server', 'nodemon:dev']);
+  grunt.registerTask('default', ['npm-install', 'bower:install', 'clean:scripts', 'copy:scripts', 'notify:server', 'nodemon:dev']);
 };

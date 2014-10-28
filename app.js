@@ -12,6 +12,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use('/scripts', express.static(__dirname + '/scripts'));
+app.use('/assets', express.static(__dirname + '/assets'));
+
 var authRouter = require('./routes/auth')(express, auth);
 app.use('/auth', authRouter);
 

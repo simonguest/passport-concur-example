@@ -1,0 +1,19 @@
+{
+  "name": "passport-concur-example",
+  "version": "0.0.0",
+  "homepage": "https://github.com/simonguest/passport-concur-example",
+  "authors": [
+    "Simon Guest <simon.guest@concur.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
