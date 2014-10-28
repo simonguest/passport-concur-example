@@ -1,20 +1,24 @@
 'use strict';
 module.exports = function (express, auth) {
+  var concur = require('concur-platform');
   var router = express.Router();
 
   router.route('/')
     .get(function (req, res) {
-      res.send('<h1>Login Page</h1><a href=\'/auth/login\'>Login</a>');
+      res.render('login.ejs');
     });
 
   router.route('/home')
-      .get(auth.ensureAuthenticated, function(req, res){
-        res.send('<h1>Welcome Page</h1><a href=\'/auth/logout\'>Logout</a>');
-      });
+    .get(auth.ensureAuthenticated, function (req, res) {
+      concur.user.get({oauthToken: req.user.accessToken})
+        .then(function (user) {
+          res.render('home.ejs', {user: user});
+        });
+    });
 
   router.route('/error')
-    .get(function(req, res){
-      res.send({'error':'true'});
+    .get(function (req, res) {
+      res.send({'error': 'true'});
     });
 
   return router;
