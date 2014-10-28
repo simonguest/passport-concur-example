@@ -27,7 +27,8 @@ module.exports = function (grunt) {
     copy: {
       scripts: {
         files: [
-          {expand: true, cwd: 'bower_components/bootstrap/dist/', src: '**/*', dest: 'scripts/bootstrap/'}
+          {expand: true, cwd: 'bower_components/bootstrap/dist/', src: '**/*', dest: 'scripts/bootstrap/'},
+          {expand: true, cwd: 'bower_components/jquery/dist/', src: '**/*', dest: 'scripts/jquery/'}
         ]
       }
     },
