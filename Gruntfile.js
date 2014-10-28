@@ -1,4 +1,3 @@
-'use strict';
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
@@ -20,5 +19,5 @@ module.exports = function (grunt) {
   /* jshint ignore:end */
 
   // Default task(s).
-  grunt.registerTask('default', ['notify:server', 'nodemon:dev']);
+  grunt.registerTask('default', ['npm-install', 'notify:server', 'nodemon:dev']);
 };
