@@ -38,6 +38,56 @@
 <div class="container">
     <div class="starter-template">
         <h1 class="text-center">Welcome, <%= user.FirstName %></h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th data-field="field">Field</th>
+                <th data-field="value">Value</th>
+            </tr>
+            <tr>
+                <td>FirstName</td>
+                <td><%= user.FirstName%></td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td><%= user.LastName%></td>
+            </tr>
+            <tr>
+                <td>LoginId</td>
+                <td><%= user.LoginId%></td>
+            </tr>
+            <tr>
+                <td>Ledger</td>
+                <td><%= user.LedgerName%></td>
+            </tr>
+            <tr>
+                <td>CountryCode</td>
+                <td><%= user.CtryCode%></td>
+            </tr>
+            <tr>
+                <td>Uses Expense?</td>
+                <td><%= user.ExpenseUser%></td>
+            </tr>
+            <tr>
+                <td>Expense Approver?</td>
+                <td><%= user.ExpenseApprover%></td>
+            </tr>
+            <tr>
+                <td>Uses Travel?</td>
+                <td><%= user.TripUser%></td>
+            </tr>
+            <tr>
+                <td>Uses Invoice?</td>
+                <td><%= user.InvoiceUser%></td>
+            </tr>
+            <tr>
+                <td>Invoice Approver?</td>
+                <td><%= user.InvoiceApprover%></td>
+            </tr>
+            </thead>
+        </table>
+
         <div class="text-center"><a href="/auth/logout">Log out</a></div>
     </div>
 </div>
