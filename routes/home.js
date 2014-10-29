@@ -12,7 +12,7 @@ module.exports = function (express, auth) {
     .get(auth.ensureAuthenticated, function (req, res) {
       concur.user.get({oauthToken: req.user.accessToken})
         .then(function (user) {
-          res.render('home.ejs', {user: user});
+          res.render('home.ejs', {user: user, oauthToken: req.user.accessToken});
         });
     });
 
